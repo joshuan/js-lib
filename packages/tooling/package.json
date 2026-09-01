@@ -1,0 +1,53 @@
+{
+  "name": "@joshuan/tooling",
+  "version": "0.1.1",
+  "description": "Shared strict TypeScript, ESLint, Vitest, SWC, and Next configuration",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=24"
+  },
+  "files": [
+    "src",
+    "tsconfig",
+    "README.md"
+  ],
+  "exports": {
+    "./eslint": "./src/eslint.mjs",
+    "./vitest": "./src/vitest.mjs",
+    "./next": "./src/next.mjs",
+    "./tsconfig/base.json": "./tsconfig/base.json",
+    "./tsconfig/web.json": "./tsconfig/web.json",
+    "./tsconfig/server.json": "./tsconfig/server.json",
+    "./tsconfig/server-commonjs.json": "./tsconfig/server-commonjs.json",
+    "./tsconfig/test.json": "./tsconfig/test.json"
+  },
+  "dependencies": {
+    "@joshuan/next-config": "0.1.0",
+    "@eslint-react/eslint-plugin": "^1.53.1",
+    "@eslint/js": "^9.39.1",
+    "@next/eslint-plugin-next": "^16.0.7",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-boundaries": "^5.0.1",
+    "eslint-plugin-import-x": "^4.16.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "globals": "^16.5.0",
+    "typescript-eslint": "^8.48.1",
+    "unplugin-swc": "^1.5.9",
+    "vitest": "^4.0.15"
+  },
+  "peerDependencies": {
+    "eslint": ">=9 <11",
+    "typescript": ">=5.7 <7"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuan/js-lib.git",
+    "directory": "packages/tooling"
+  },
+  "license": "UNLICENSED"
+}

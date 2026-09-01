@@ -1,0 +1,63 @@
+{
+  "name": "@joshuan/testkit",
+  "version": "0.1.1",
+  "description": "Authentication doubles and adapter conformance suites",
+  "type": "module",
+  "types": "./dist/types/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=24"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./contracts": {
+      "types": "./dist/types/contracts.d.ts",
+      "import": "./dist/esm/contracts.js",
+      "require": "./dist/cjs/contracts.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "contracts": [
+        "dist/types/contracts.d.ts"
+      ],
+      "*": [
+        "dist/types/index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node ../../scripts/clean-dist.mjs && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && node ../../scripts/mark-cjs.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.esm.json"
+  },
+  "dependencies": {
+    "@joshuan/auth-core": "0.1.1"
+  },
+  "peerDependencies": {
+    "vitest": "^3.0.0 || ^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vitest": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuan/js-lib.git",
+    "directory": "packages/testkit"
+  },
+  "license": "UNLICENSED"
+}

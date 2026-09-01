@@ -1,0 +1,57 @@
+{
+  "name": "@joshuan/auth-adapters",
+  "version": "0.1.1",
+  "description": "Secure Node.js adapters for @joshuan/auth-core",
+  "type": "module",
+  "types": "./dist/types/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=24"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./single-user": {
+      "types": "./dist/types/single-user.d.ts",
+      "import": "./dist/esm/single-user.js",
+      "require": "./dist/cjs/single-user.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "single-user": [
+        "dist/types/single-user.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node ../../scripts/clean-dist.mjs && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && node ../../scripts/mark-cjs.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.esm.json"
+  },
+  "dependencies": {
+    "@joshuan/auth-core": "0.1.1",
+    "argon2": "^0.44.0",
+    "nodemailer": "^7.0.11"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^7.0.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuan/js-lib.git",
+    "directory": "packages/auth-adapters"
+  },
+  "license": "UNLICENSED"
+}

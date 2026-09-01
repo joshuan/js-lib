@@ -1,0 +1,37 @@
+{
+  "name": "@joshuan/auth-core",
+  "version": "0.1.1",
+  "description": "Framework-free authentication and server-side session flows",
+  "type": "module",
+  "types": "./dist/types/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=24"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "scripts": {
+    "build": "node ../../scripts/clean-dist.mjs && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && node ../../scripts/mark-cjs.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.esm.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuan/js-lib.git",
+    "directory": "packages/auth-core"
+  },
+  "license": "UNLICENSED"
+}

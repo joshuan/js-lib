@@ -1,0 +1,33 @@
+{
+  "name": "@joshuan/next-config",
+  "version": "0.1.0",
+  "description": "Small runtime-safe shared Next.js configuration factory",
+  "type": "module",
+  "types": "./src/index.d.ts",
+  "main": "./src/index.cjs",
+  "module": "./src/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.mjs",
+      "require": "./src/index.cjs"
+    }
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=24"
+  },
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuan/js-lib.git",
+    "directory": "packages/next-config"
+  },
+  "license": "UNLICENSED"
+}

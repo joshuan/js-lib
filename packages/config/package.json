@@ -1,0 +1,65 @@
+{
+  "name": "@joshuan/config",
+  "version": "0.1.1",
+  "description": "Typed environment configuration and Nest bindings",
+  "type": "module",
+  "types": "./dist/types/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=24"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./nest": {
+      "types": "./dist/types/nest.d.ts",
+      "import": "./dist/esm/nest.js",
+      "require": "./dist/cjs/nest.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "nest": [
+        "dist/types/nest.d.ts"
+      ],
+      "*": [
+        "dist/types/index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node ../../scripts/clean-dist.mjs && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && node ../../scripts/mark-cjs.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.esm.json"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^11.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@nestjs/common": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@nestjs/common": "^11.1.9",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuan/js-lib.git",
+    "directory": "packages/config"
+  },
+  "license": "UNLICENSED"
+}
