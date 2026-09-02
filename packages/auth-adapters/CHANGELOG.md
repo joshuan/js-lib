@@ -1,5 +1,11 @@
 # @joshuan/auth-adapters
 
+## 0.1.2
+
+### Patch Changes
+
+- Upgrade Nodemailer to the maintained 9.x line containing fixes for the published SMTP and message normalization advisories.
+
 ## 0.1.1
 
 ### Patch Changes

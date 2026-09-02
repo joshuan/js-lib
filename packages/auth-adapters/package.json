@@ -1,6 +1,6 @@
 {
   "name": "@joshuan/auth-adapters",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Secure Node.js adapters for @joshuan/auth-core",
   "type": "module",
   "types": "./dist/types/index.d.ts",
@@ -40,10 +40,10 @@
   "dependencies": {
     "@joshuan/auth-core": "0.1.1",
     "argon2": "^0.44.0",
-    "nodemailer": "^7.0.11"
+    "nodemailer": "^9.0.5"
   },
   "devDependencies": {
-    "@types/nodemailer": "^7.0.4"
+    "@types/nodemailer": "^8.0.1"
   },
   "publishConfig": {
     "access": "public"

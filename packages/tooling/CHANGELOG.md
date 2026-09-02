@@ -1,5 +1,17 @@
 # @joshuan/tooling
 
+## 0.1.5
+
+### Patch Changes
+
+- Use the native eslint-plugin-boundaries 7 policy and entity-selector syntax in the shared application config.
+
+## 0.1.4
+
+### Patch Changes
+
+- Upgrade eslint-plugin-boundaries to the maintained 7.x line and remove its vulnerable pinned Handlebars dependency.
+
 ## 0.1.3
 
 ### Patch Changes
