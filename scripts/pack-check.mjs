@@ -86,6 +86,7 @@ try {
         compilerOptions: {
           module: 'CommonJS',
           moduleResolution: 'Node',
+          ignoreDeprecations: '6.0',
           noEmit: true,
           skipLibCheck: true,
           strict: true,
