@@ -108,12 +108,12 @@ References: [Ant Design tokens](https://ant.design/docs/react/customize-theme/),
 3. Canonical browser matrix for both applications; inspect screenshots before accepting baselines.
 4. Publish through Changesets, then install the exact registry version in each application.
 
-`@joshuan/design-system@0.2.0` is published from `c072ffa` through GitHub Actions OIDC
-with npm provenance. [CI](https://github.com/joshuan/js-lib/actions/runs/36867282954) and
-[Release](https://github.com/joshuan/js-lib/actions/runs/36867282979) are green.
-Both applications now install the exact public registry version. Its compiled files match the
-reviewed pre-release archive byte for byte; the temporary vendor archives and Docker COPY
-instructions are removed. Production deployment remains a separate operation.
+`@joshuan/design-system@0.2.1` is published from `19fc9f3` through GitHub Actions OIDC
+with npm provenance. [CI](https://github.com/joshuan/js-lib/actions/runs/36875120791) and
+[Release](https://github.com/joshuan/js-lib/actions/runs/36875120813) are green.
+Both applications now install the exact public registry version. Its font files match the
+previously accepted fonts in both consumers byte for byte. The temporary vendor archives and
+Docker COPY instructions are removed. Production deployment remains a separate operation.
 
 ## Navigation and release completion — 2026-10-01
 
