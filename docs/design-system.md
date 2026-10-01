@@ -20,7 +20,8 @@ have the same meaning in both products and always include a textual or iconic si
 | Secondary text | `#5F7079` | `#A2B3BA` |
 | Divider        | `#DEE5E8` | `#30434B` |
 
-IBM Plex Sans is self-hosted by each Next application, with system sans fallback. IBM Plex Mono
+IBM Plex Sans is bundled with the shared stylesheet and self-hosted by each application, with
+matched Arial fallback metrics. IBM Plex Mono
 is reserved for paths, hashes and code. Numbers use tabular figures. Body 14/21, page titles 24/31
 (20/26 on phones), section titles 18/26. Controls 40 px, small 32 px, touch targets at least 44 px.
 Radii: controls 6, surfaces 8, dialogs 12. Spacing: 4/8/12/16/20/24/32.
@@ -51,7 +52,7 @@ surfaces and heading composition. No new global header or speculative app launch
 - Root: framework-free palettes and dimensions.
 - `/antd`: the common token/component configuration; Ant Design is a peer, not bundled.
 - `/react`: `NavigationFrame`, `AppBrand`, `PageHeader` and system appearance hooks; React is a peer. No Next or next-intl imports.
-- `/styles.css`: shared heading/layout rules and generated dimension variables; no product palette.
+- `/styles.css`: bundled IBM Plex fonts, shared heading/layout rules and generated dimension variables; no product palette.
 - Product adapters: locale, persistence of theme, auth hydration guards, routing and domain layouts.
 
 Use the same Ant Design 6 and React 19 versions in both consumers. Legere moves to the current
@@ -130,3 +131,17 @@ local. No launcher, shared identity or extra navigation configuration is introdu
 
 The user requests npm publication and both GitHub releases. Changesets owns the library release.
 Both consumers install the exact registry version without a sibling checkout or vendor archive. Verify both apps' hosted checks and release image publication.
+
+## Reproducible font assets — 2026-10-01
+
+A fresh Rent Manager CI build on `1be882f` failed in the Google font loader, while parallel builds
+of the same commit succeeded. This matches [Next.js issue 99114](https://github.com/vercel/next.js/issues/99114):
+Google sometimes returns extensionless font URLs that the current bundler cannot parse.
+The shared package therefore carries the exact 16 WOFF2 files already accepted in both consumer
+visual suites, their SHA-256 manifest and IBM's SIL Open Font License. The bytes were compared
+between Legere's font cache and Rent Manager's canonical Linux image before extraction.
+
+The stylesheet owns `--font-sans` and `--font-mono`, preserving weight declarations, Unicode ranges,
+font-display and fallback metrics. Consumers remove their Google loader calls. Neither building
+nor rendering requires Google Fonts. Package checks verify every referenced binary and its digest;
+both canonical consumer suites must compare without baseline updates. This is a patch release.

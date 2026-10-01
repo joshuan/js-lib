@@ -17,7 +17,9 @@ const theme = createAppTheme({ dark, reducedMotion, accent: 'green' });
 
 `PageHeader` receives title, description, back, actions and meta as React nodes. It renders one h1.
 Pass a host Link as `back`; the package never owns routing or translations. Import the stylesheet
-once in the root layout. Self-host IBM Plex Sans and Mono as `--font-sans` and `--font-mono`.
+once in the root layout. It supplies the pinned, self-hosted IBM Plex Sans and Mono binaries and
+`--font-sans` / `--font-mono`; no Google font loader or network request is needed during build.
+The included `dist/fonts/LICENSE.txt` applies to the font files, and `provenance.json` records their hashes.
 Root exports contain palettes, font declarations and dimensions; they have no React side effects.
 `/react` preserves its client boundary. Components and Ant Design are peers, never bundled copies.
 

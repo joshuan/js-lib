@@ -1,0 +1,135 @@
+{
+  "source": "IBM Plex distributed by Google Fonts, captured unchanged from the accepted application builds on 2026-10-01",
+  "license": "SIL OFL 1.1",
+  "licenseSource": "https://github.com/IBM/plex/blob/763c36ef9117782905ae010056dfbe8fd2653a25/LICENSE.txt",
+  "files": [
+    {
+      "file": "ibm-plex-sans-400-500-600-cyrillic-ext.woff2",
+      "family": "IBM Plex Sans",
+      "weights": ["400", "500", "600"],
+      "subset": "cyrillic-ext",
+      "sha256": "c01b3de8c8058462caadd044a6b874a9f4d7098d7d71d6c70e6a278096b8640e",
+      "bytes": 19684
+    },
+    {
+      "file": "ibm-plex-sans-400-500-600-cyrillic.woff2",
+      "family": "IBM Plex Sans",
+      "weights": ["400", "500", "600"],
+      "subset": "cyrillic",
+      "sha256": "5bac72520e0a9a5669e08b15fa1e15be6f4da74aa0b2d4315a97c11e1465120a",
+      "bytes": 25408
+    },
+    {
+      "file": "ibm-plex-sans-400-500-600-greek.woff2",
+      "family": "IBM Plex Sans",
+      "weights": ["400", "500", "600"],
+      "subset": "greek",
+      "sha256": "a29d4e6345cdb7e2b6daabf4961a6dcafcbc7ed1eac26186ca4a004cd32d64d8",
+      "bytes": 16296
+    },
+    {
+      "file": "ibm-plex-sans-400-500-600-vietnamese.woff2",
+      "family": "IBM Plex Sans",
+      "weights": ["400", "500", "600"],
+      "subset": "vietnamese",
+      "sha256": "526a4dd36c3af41f73a623e852302d8947d7fd4c00ee3026d82ef1f24a412fcd",
+      "bytes": 9612
+    },
+    {
+      "file": "ibm-plex-sans-400-500-600-latin-ext.woff2",
+      "family": "IBM Plex Sans",
+      "weights": ["400", "500", "600"],
+      "subset": "latin-ext",
+      "sha256": "ae1d854fefa1167a79071f1afe01d4d51b60c5840c1be36dd74bd5fe7375b405",
+      "bytes": 25868
+    },
+    {
+      "file": "ibm-plex-sans-400-500-600-latin.woff2",
+      "family": "IBM Plex Sans",
+      "weights": ["400", "500", "600"],
+      "subset": "latin",
+      "sha256": "056e4e2459f57a0033c8c9c844ff19d6e42ac8602027803d4345823bcc939818",
+      "bytes": 40240
+    },
+    {
+      "file": "ibm-plex-mono-400-cyrillic-ext.woff2",
+      "family": "IBM Plex Mono",
+      "weights": ["400"],
+      "subset": "cyrillic-ext",
+      "sha256": "c6f09ee0e0a24b7c85ecb2a601eb99332f65b1f6b37c31e0bbe73fb307625eca",
+      "bytes": 4348
+    },
+    {
+      "file": "ibm-plex-mono-400-cyrillic.woff2",
+      "family": "IBM Plex Mono",
+      "weights": ["400"],
+      "subset": "cyrillic",
+      "sha256": "7b59d6bf7f8b8408ac28f27d01dca9a890abeae77045d343b1d8ccb089a92e54",
+      "bytes": 5476
+    },
+    {
+      "file": "ibm-plex-mono-400-vietnamese.woff2",
+      "family": "IBM Plex Mono",
+      "weights": ["400"],
+      "subset": "vietnamese",
+      "sha256": "0a8b854cc18641bd1b8222afa7ec82a75e59bc6501f777744ec87db1b6cd7a2c",
+      "bytes": 4000
+    },
+    {
+      "file": "ibm-plex-mono-400-latin-ext.woff2",
+      "family": "IBM Plex Mono",
+      "weights": ["400"],
+      "subset": "latin-ext",
+      "sha256": "f1050dc5317b43434c0aeda599d4624c774ffc162e87a8cf204b949b6a85816d",
+      "bytes": 8860
+    },
+    {
+      "file": "ibm-plex-mono-400-latin.woff2",
+      "family": "IBM Plex Mono",
+      "weights": ["400"],
+      "subset": "latin",
+      "sha256": "c36f509c0a8f9f85f29cb44bc8701d8a9e0b14c499e77a884f789ead7093a7ac",
+      "bytes": 10052
+    },
+    {
+      "file": "ibm-plex-mono-500-cyrillic-ext.woff2",
+      "family": "IBM Plex Mono",
+      "weights": ["500"],
+      "subset": "cyrillic-ext",
+      "sha256": "311098be73eac339128f0b5a6e33d72645b6f87488541fdf467c402152d297fd",
+      "bytes": 4336
+    },
+    {
+      "file": "ibm-plex-mono-500-cyrillic.woff2",
+      "family": "IBM Plex Mono",
+      "weights": ["500"],
+      "subset": "cyrillic",
+      "sha256": "d524dc8ff6dbf7ed69772f3b2ff4affaf5a89b5762b270e36c3f21da0d4e39f5",
+      "bytes": 5500
+    },
+    {
+      "file": "ibm-plex-mono-500-vietnamese.woff2",
+      "family": "IBM Plex Mono",
+      "weights": ["500"],
+      "subset": "vietnamese",
+      "sha256": "b2529fba93fd07a50ffb8fc3d103eb04b0c298d4f6564d2833c44fde286de7e4",
+      "bytes": 4036
+    },
+    {
+      "file": "ibm-plex-mono-500-latin-ext.woff2",
+      "family": "IBM Plex Mono",
+      "weights": ["500"],
+      "subset": "latin-ext",
+      "sha256": "77f03e26f981c582bdba3a7abed4baa2d3149211c01366bb3ab3ba7622ec4ae5",
+      "bytes": 8848
+    },
+    {
+      "file": "ibm-plex-mono-500-latin.woff2",
+      "family": "IBM Plex Mono",
+      "weights": ["500"],
+      "subset": "latin",
+      "sha256": "a76f53ca6612e7b3828eec2311098675b7f9849ae4169a8bcef6302aec02a6c0",
+      "bytes": 10060
+    }
+  ]
+}
