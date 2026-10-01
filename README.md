@@ -17,6 +17,9 @@ domain models, Prisma schemas, controllers, and composition roots stay in the ap
 - `@joshuan/testkit` — reusable conformance suites and test doubles.
 - `@joshuan/tooling` — ESLint, TypeScript, SWC, and Vitest configuration presets.
 
+- `@joshuan/design-system` — shared Ant Design 6 themes, page headings and system appearance.
+  [Design contract and extraction audit](docs/design-system.md).
+
 ## Commands
 
 ```sh

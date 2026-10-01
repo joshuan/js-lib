@@ -8,10 +8,10 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked.map((config) => ({
     ...config,
-    files: ['packages/**/*.ts'],
+    files: ['packages/**/*.{ts,tsx}'],
   })),
   {
-    files: ['packages/**/*.ts'],
+    files: ['packages/**/*.{ts,tsx}'],
     languageOptions: {
       parserOptions: { project: ['./tsconfig.json'], tsconfigRootDir: import.meta.dirname },
       globals: globals.node,

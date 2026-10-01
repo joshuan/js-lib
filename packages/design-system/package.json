@@ -1,0 +1,75 @@
+{
+  "name": "@joshuan/design-system",
+  "version": "0.1.0",
+  "description": "Shared design for the Joshuan applications: Ant Design theme, page layout and appearance",
+  "type": "module",
+  "types": "./dist/types/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./antd": {
+      "types": "./dist/types/antd.d.ts",
+      "import": "./dist/esm/antd.js",
+      "require": "./dist/cjs/antd.js"
+    },
+    "./react": {
+      "types": "./dist/types/react.d.ts",
+      "import": "./dist/esm/react.js",
+      "require": "./dist/cjs/react.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "typesVersions": {
+    "*": {
+      "antd": [
+        "dist/types/antd.d.ts"
+      ],
+      "react": [
+        "dist/types/react.d.ts"
+      ],
+      "*": [
+        "dist/types/index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node ../../scripts/clean-dist.mjs && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && node ../../scripts/mark-cjs.mjs && node build-css.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.esm.json"
+  },
+  "peerDependencies": {
+    "antd": "^6.5.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "antd": "6.5.0",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuan/js-lib.git",
+    "directory": "packages/design-system"
+  },
+  "license": "UNLICENSED"
+}

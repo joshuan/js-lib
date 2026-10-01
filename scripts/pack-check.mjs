@@ -45,6 +45,10 @@ try {
     resolve(temporary, 'esm.mjs'),
     [
       "await import('@joshuan/config');",
+      "await import('@joshuan/design-system');",
+      "await import('@joshuan/design-system/antd');",
+      "await import('@joshuan/design-system/react');",
+      "if (!import.meta.resolve('@joshuan/design-system/styles.css').endsWith('/dist/styles.css')) throw new Error('Missing design stylesheet');",
       "await import('@joshuan/http');",
       "await import('@joshuan/http/express');",
       "await import('@joshuan/observability');",
@@ -61,6 +65,9 @@ try {
     resolve(temporary, 'commonjs.cjs'),
     [
       "require('@joshuan/config');",
+      "require('@joshuan/design-system');",
+      "require('@joshuan/design-system/antd');",
+      "require('@joshuan/design-system/react');",
       "require('@joshuan/http');",
       "require('@joshuan/http/express');",
       "require('@joshuan/observability');",
@@ -75,6 +82,10 @@ try {
   await writeFile(
     resolve(temporary, 'classic-node.ts'),
     [
+      "import { dimensions } from '@joshuan/design-system';",
+      "import { createAppTheme } from '@joshuan/design-system/antd';",
+      "import { PageHeader } from '@joshuan/design-system/react';",
+      'void [dimensions, createAppTheme, PageHeader];',
       "import { FilePasswordManager } from '@joshuan/auth-adapters/single-user';",
       'void FilePasswordManager;',
     ].join('\n'),

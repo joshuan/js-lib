@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "build": "npm run build:foundations && npm run build:dependents",
-    "build:foundations": "npm run build --workspace @joshuan/auth-core --workspace @joshuan/config --workspace @joshuan/http --workspace @joshuan/observability",
+    "build:foundations": "npm run build --workspace @joshuan/auth-core --workspace @joshuan/config --workspace @joshuan/http --workspace @joshuan/observability --workspace @joshuan/design-system",
     "build:dependents": "npm run build --workspace @joshuan/auth-adapters --workspace @joshuan/next-nest --workspace @joshuan/testkit",
     "typecheck": "npm run build && npm run typecheck --workspaces --if-present",
     "lint": "eslint . && prettier --check .",
