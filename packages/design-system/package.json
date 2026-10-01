@@ -1,6 +1,6 @@
 {
   "name": "@joshuan/design-system",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Shared design for the Joshuan applications: Ant Design theme, page layout and appearance",
   "type": "module",
   "types": "./dist/types/index.d.ts",
