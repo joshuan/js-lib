@@ -21,7 +21,16 @@ function contrast(first: string, second: string): number {
 for (const accent of ['green', 'blue'] as const) {
   describe(`${accent} theme`, () => {
     it.each([false, true])('keeps computed text and button states readable (dark: %s)', (dark) => {
-      const token = theme.getDesignToken(createAppTheme({ dark, accent }));
+      const config = createAppTheme({ dark, accent });
+      const token = theme.getDesignToken(config);
+      const tooltip = theme.getDesignToken({
+        ...config,
+        token: { ...config.token, ...config.components?.Tooltip },
+      });
+      expect(
+        contrast(tooltip.colorTextLightSolid, tooltip.colorBgSpotlight),
+        'tooltip text on spotlight',
+      ).toBeGreaterThanOrEqual(4.5);
       const surfaces = [token.colorBgLayout, token.colorBgContainer, token.colorBgElevated];
       for (const foreground of [
         token.colorText,

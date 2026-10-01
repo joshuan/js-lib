@@ -149,7 +149,10 @@ export function createAppTheme({
       },
       Statistic: { contentFontSize: 26 },
       Segmented: { itemSelectedBg: c.surfaceRaised },
-      Tooltip: { colorBgSpotlight: dark ? c.surfaceRaised : c.text },
+      Tooltip: {
+        colorBgSpotlight: dark ? c.surfaceRaised : c.text,
+        colorTextLightSolid: dark ? c.text : c.surface,
+      },
       Form: { itemMarginBottom: 20, verticalLabelPadding: '0 0 6px', labelColor: c.text },
       Descriptions: { labelColor: c.textSecondary },
       Tabs: { horizontalItemPadding: '12px 0', horizontalItemGutter: 24, titleFontSize: 14 },
