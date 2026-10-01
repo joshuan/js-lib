@@ -112,3 +112,21 @@ The pre-release tarball is built from this repository, never edited in a consume
 temporary distribution bridge so clean CI and Docker builds do not depend on a neighbour directory
 or an unpublished npm version. Repack both consumers after a source change. Keep provenance and the
 SHA-256 digest beside the tarball. Do not publish, deploy or claim production acceptance implicitly.
+
+## Navigation and release completion — 2026-10-01
+
+Both consumers use NavigationFrame from the React entry. Above 767 px the sidebar remains visible:
+240 px expanded, 64 px collapsed. It starts collapsed below 1024 px; a user's explicit choice is
+retained during client navigation and desktop/tablet resizing. Below 768 px navigation is a 280 px
+left drawer, closed initially and when a link is activated, a route changes or the viewport grows.
+The same 44 px collapse/expand control sits at the bottom. Mobile open/close controls are also 44 px;
+Escape closes the drawer and returns focus through Ant Design's focus management.
+
+The 64 px brand row always contains a home link: icon and name when expanded, icon only in the rail,
+icon and name in the mobile bar and drawer. Each host provides its existing mark, accessible name,
+Next Link and home route. Menus, account controls, apartment tree persistence and permissions remain
+local. No launcher, shared identity or extra navigation configuration is introduced.
+
+The user requests npm publication and both GitHub releases. Changesets owns the library release;
+once available, both consumers install its exact registry version and remove the temporary vendor
+archive and Docker COPY instructions. Verify both apps' hosted checks and release image publication.

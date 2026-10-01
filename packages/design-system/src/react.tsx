@@ -1,6 +1,8 @@
 'use client';
 
 import { useSyncExternalStore, type ReactNode } from 'react';
+import { mediaStore, serverSnapshot } from './media.js';
+export { AppBrand, NavigationFrame, type NavigationFrameProps } from './navigation.js';
 
 export interface PageHeaderProps {
   title: ReactNode;
@@ -35,25 +37,8 @@ export function PageHeader({
   );
 }
 
-function mediaStore(query: string) {
-  return {
-    subscribe(this: void, listener: () => void): () => void {
-      if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return () => {};
-      const media = window.matchMedia(query);
-      media.addEventListener('change', listener);
-      return () => media.removeEventListener('change', listener);
-    },
-    snapshot(this: void): boolean {
-      return typeof window !== 'undefined' && typeof window.matchMedia === 'function'
-        ? window.matchMedia(query).matches
-        : false;
-    },
-  };
-}
-
 const colorScheme = mediaStore('(prefers-color-scheme: dark)');
 const motion = mediaStore('(prefers-reduced-motion: reduce)');
-const serverSnapshot = () => false;
 
 /** SSR starts in light mode; hydration and later OS changes use the live preference. */
 export function useSystemAppearance() {

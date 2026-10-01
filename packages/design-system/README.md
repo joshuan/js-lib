@@ -21,6 +21,14 @@ once in the root layout. Self-host IBM Plex Sans and Mono as `--font-sans` and `
 Root exports contain palettes, font declarations and dimensions; they have no React side effects.
 `/react` preserves its client boundary. Components and Ant Design are peers, never bundled copies.
 
+`NavigationFrame` supplies the same 240/64 px collapsible sidebar and 280 px phone drawer to
+both products. It starts compact between 768 and 1023 px, uses the drawer below 768 px, and keeps
+an explicit desktop collapse choice during client navigation. Supply `pathname`, localized
+`labels`, product `navigation(collapsed)` content and a `brand` home link containing
+`<AppBrand name={name} mark={mark} />`. Links, route changes, Escape and leaving the phone
+breakpoint close the drawer. Routes, account controls and menu expansion remain host-owned.
+The same AppBrand belongs in public authentication headers, always inside a home link.
+
 Build with `npm run build --workspace @joshuan/design-system`. The build generates CSS dimensions
 from the same source as TypeScript. Pack with `npm pack --workspace @joshuan/design-system`.
 Do not copy styles or themes into applications. Product-specific viewer and apartment layouts stay

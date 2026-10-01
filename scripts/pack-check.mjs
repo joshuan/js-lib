@@ -84,8 +84,8 @@ try {
     [
       "import { dimensions } from '@joshuan/design-system';",
       "import { createAppTheme } from '@joshuan/design-system/antd';",
-      "import { PageHeader } from '@joshuan/design-system/react';",
-      'void [dimensions, createAppTheme, PageHeader];',
+      "import { PageHeader, AppBrand, NavigationFrame } from '@joshuan/design-system/react';",
+      'void [dimensions, createAppTheme, PageHeader, AppBrand, NavigationFrame];',
       "import { FilePasswordManager } from '@joshuan/auth-adapters/single-user';",
       'void FilePasswordManager;',
     ].join('\n'),
