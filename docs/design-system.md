@@ -24,7 +24,7 @@ IBM Plex Sans is self-hosted by each Next application, with system sans fallback
 is reserved for paths, hashes and code. Numbers use tabular figures. Body 14/21, page titles 24/31
 (20/26 on phones), section titles 18/26. Controls 40 px, small 32 px, touch targets at least 44 px.
 Radii: controls 6, surfaces 8, dialogs 12. Spacing: 4/8/12/16/20/24/32.
-Navigation 240 px; archive compact rail 64 px. Page gutters 24/16/12, aligned to the left.
+Navigation 240 px; compact rail 64 px in both applications. Page gutters 24/16/12, aligned to the left.
 Forms retain a readable width. Document reading can use the full workspace.
 
 ```text
@@ -50,7 +50,7 @@ surfaces and heading composition. No new global header or speculative app launch
 
 - Root: framework-free palettes and dimensions.
 - `/antd`: the common token/component configuration; Ant Design is a peer, not bundled.
-- `/react`: `PageHeader` and system appearance hooks; React is a peer. No Next or next-intl imports.
+- `/react`: `NavigationFrame`, `AppBrand`, `PageHeader` and system appearance hooks; React is a peer. No Next or next-intl imports.
 - `/styles.css`: shared heading/layout rules and generated dimension variables; no product palette.
 - Product adapters: locale, persistence of theme, auth hydration guards, routing and domain layouts.
 
@@ -105,13 +105,14 @@ References: [Ant Design tokens](https://ant.design/docs/react/customize-theme/),
 1. Package and both host adapters; remove duplicated foundations and heading rules.
 2. Type/lint/unit checks, computed contrast in both product accents, SSR/hydration and packed exports.
 3. Canonical browser matrix for both applications; inspect screenshots before accepting baselines.
-4. Publish through the existing Changesets process only when release is requested, then replace
-   the temporary checked-in package tarball with the exact registry version in each application.
+4. Publish through Changesets, then install the exact registry version in each application.
 
-The pre-release tarball is built from this repository, never edited in a consumer. It is a deliberate
-temporary distribution bridge so clean CI and Docker builds do not depend on a neighbour directory
-or an unpublished npm version. Repack both consumers after a source change. Keep provenance and the
-SHA-256 digest beside the tarball. Do not publish, deploy or claim production acceptance implicitly.
+`@joshuan/design-system@0.2.0` is published from `c072ffa` through GitHub Actions OIDC
+with npm provenance. [CI](https://github.com/joshuan/js-lib/actions/runs/36867282954) and
+[Release](https://github.com/joshuan/js-lib/actions/runs/36867282979) are green.
+Both applications now install the exact public registry version. Its compiled files match the
+reviewed pre-release archive byte for byte; the temporary vendor archives and Docker COPY
+instructions are removed. Production deployment remains a separate operation.
 
 ## Navigation and release completion — 2026-10-01
 
@@ -127,6 +128,5 @@ icon and name in the mobile bar and drawer. Each host provides its existing mark
 Next Link and home route. Menus, account controls, apartment tree persistence and permissions remain
 local. No launcher, shared identity or extra navigation configuration is introduced.
 
-The user requests npm publication and both GitHub releases. Changesets owns the library release;
-once available, both consumers install its exact registry version and remove the temporary vendor
-archive and Docker COPY instructions. Verify both apps' hosted checks and release image publication.
+The user requests npm publication and both GitHub releases. Changesets owns the library release.
+Both consumers install the exact registry version without a sibling checkout or vendor archive. Verify both apps' hosted checks and release image publication.
