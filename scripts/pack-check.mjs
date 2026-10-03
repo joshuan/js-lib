@@ -53,6 +53,8 @@ try {
       "const { createHash } = await import('node:crypto');",
       "const designCss = new URL(import.meta.resolve('@joshuan/design-system/styles.css'));",
       "const css = await readFile(designCss, 'utf8');",
+      "const migration = await readFile(new URL('../MIGRATION.md', designCss), 'utf8');",
+      "if (!migration.includes('Upgrade to 0.3') || !migration.includes('colorPrimaryText')) throw new Error('Missing consumer migration guide');",
       "const fontManifest = JSON.parse(await readFile(new URL('./fonts/provenance.json', designCss), 'utf8'));",
       "if (fontManifest.files.length !== 16) throw new Error('Incomplete bundled font manifest');",
       'for (const font of fontManifest.files) {',

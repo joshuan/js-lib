@@ -1,6 +1,6 @@
 {
   "name": "@joshuan/design-system",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Shared design for the Joshuan applications: Ant Design theme, page layout and appearance",
   "type": "module",
   "types": "./dist/types/index.d.ts",
@@ -14,7 +14,8 @@
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "MIGRATION.md"
   ],
   "exports": {
     ".": {

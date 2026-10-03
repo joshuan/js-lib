@@ -8,17 +8,18 @@ remain in each application. This is an application system, not a marketing site 
 
 The two existing designs already favour quiet workspaces, persistent navigation, explicit actions
 and readable records. Preserve this direction. Use one neutral palette, one type scale and one
-control scale. Green identifies the archive; blue identifies the apartment workspace. Status colours
+control scale. Amber identifies the archive; blue identifies the apartment workspace. A teal (`green`) accent
+remains available for other products. Status colours
 have the same meaning in both products and always include a textual or iconic signal.
 
 | Role           | Light     | Dark      |
 | -------------- | --------- | --------- |
-| Canvas         | `#F5F7F8` | `#121A1E` |
-| Surface        | `#FFFFFF` | `#1A252B` |
-| Raised surface | `#FFFFFF` | `#223139` |
-| Text           | `#24323B` | `#E7EFF2` |
-| Secondary text | `#5F7079` | `#A2B3BA` |
-| Divider        | `#DEE5E8` | `#30434B` |
+| Canvas         | `#EDF1F5` | `#10171F` |
+| Surface        | `#FFFFFF` | `#1C2834` |
+| Raised surface | `#FFFFFF` | `#263646` |
+| Text           | `#14212D` | `#F2F6FA` |
+| Secondary text | `#46586A` | `#B9C8D6` |
+| Divider        | `#C6D0DA` | `#405469` |
 
 IBM Plex Sans is bundled with the shared stylesheet and self-hosted by each application, with
 matched Arial fallback metrics. IBM Plex Mono
@@ -145,3 +146,17 @@ The stylesheet owns `--font-sans` and `--font-mono`, preserving weight declarati
 font-display and fallback metrics. Consumers remove their Google loader calls. Neither building
 nor rendering requires Google Fonts. Package checks verify every referenced binary and its digest;
 both canonical consumer suites must compare without baseline updates. This is a patch release.
+
+## Contrasting brands — 2026-10-03
+
+The shared package owns the new foundations and the complete `amber`, `blue` and `green` palettes.
+Legere chooses amber; consumers do not layer local themes over the factory. Action fills, on-brand
+text, brand text, selected surfaces and form boundaries are separate roles. The amber fill is
+`#FFBD3E` with dark `#332100` labels. The old muted theme is replaced rather than retained behind
+an option. `Palette.accent` is removed in favor of explicit brand/semantic roles.
+
+The [consumer upgrade guide](../packages/design-system/MIGRATION.md) is shipped in the npm package,
+alongside the expanded README. Existing services upgrade independently; this task migrates Legere.
+Tests cover all three accents in both modes, including semantic/named tags, controls and reduced
+motion. Packed-consumer checks must verify the migration guide is present. Release through
+Changesets; applications consume the exact published version.
